@@ -1,6 +1,6 @@
 'use strict'
 
-const Plugin = require('powercord/Plugin')
+const { Plugin } = require('powercord/entities')
 const { get: requestGET } = require('powercord/http')
 const { getOwnerInstance, sleep } = require('powercord/util')
 const { getModule } = require('powercord/webpack')
@@ -9,14 +9,14 @@ const { inject, uninject } = require('powercord/injector')
 const cssom = require('./dependencies/cssom.js')
 
 class DerealizedTags extends Plugin {
-  async start () {
+  async startPlugin () {
     await this.patchMessageContent()
     this.fetchTags()
 
     setInterval(() => this.fetchTags(), 1.8e+6)
   }
 
-  unload () {
+  pluginWillUnload () {
     uninject('pc-derealizedTags-MessageContent-componentDidMount')
     uninject('pc-derealizedTags-MessageContent-render')
 
