@@ -1,8 +1,8 @@
 {
-  "name": "Derealized tags",
+  "name": "Black Box' tags",
   "version": "0.1.0",
-  "description": "Adds Derealized's user tags",
+  "description": "Adds Black Box' tags directly",
   "author": "intrnl",
   "license": "MIT",
-  "repo": "https://github.com/intrnl/pc-derealizedTags"
+  "repo": "https://github.com/intrnl/pc-blackboxTags"
 }
